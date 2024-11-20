@@ -1,8 +1,8 @@
-const numePagina = document.getElementById('numePagina');
-const numeInput = document.getElementById('nume');
+const titlu = document.getElementById('titlu');
+const titluNou = document.getElementById('titluNou');
 const save = document.getElementById('save');
 
 save.addEventListener('click', () => {
-  const nume = numeInput.value;
-  numePagina.innerHTML = nume;
+  const nume = titluNou.value;
+  titlu.innerHTML = nume;
 });

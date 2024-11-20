@@ -4,6 +4,19 @@ body {
   background-color: rebeccapurple;
 }
 
+.header {
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header p {
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+
 /* home */
 .home {
   display: grid;
@@ -12,7 +25,7 @@ body {
 
 /* stanga */
 .stanga {
-  background-color: red;
+  background-color: rebeccapurple;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,7 +43,7 @@ body {
 /* content to print */
 #contentToPrint {
   width: 31em;
-  height: 45em;
+  height: 45.2em;
   padding: 20px;
   border: 1px solid black;
   background-color: #fff;
@@ -204,15 +217,18 @@ body {
 table {
   width: 500px;
   height: 70px;
-  border: 1px solid black;
+  border: 0.1px solid rgb(47, 47, 47);
+  border-width: 1px solid rgb(47, 47, 47);
   border-collapse: collapse;
   font-size: 0.5em;
 }
 th {
-  border: 1px solid black;
+  border: 0.1px solid rgb(47, 47, 47);
+  border-width: 1px solid rgb(47, 47, 47);
 }
 td {
-  border: 1px solid black;
+  border: 0.1px solid rgb(47, 47, 47);
+  border-width: 1px solid rgb(47, 47, 47);
 }
 /* dreapta */
 #printPdf {
@@ -221,5 +237,5 @@ td {
 }
 
 .dreapta {
-  background-color: blue;
+  background-color: rebeccapurple;
 }

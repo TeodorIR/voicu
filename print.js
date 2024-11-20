@@ -14,7 +14,7 @@ document
 
     // Convert the div to a canvas using html2canvas
     const canvas = await html2canvas(contentDiv, {
-      scale: 2, // Increase resolution
+      scale: 5, // Increase resolution
       useCORS: true, // Ensure cross-origin content is loaded
     });
 
