@@ -36,8 +36,16 @@ body {
   line-height: 1.5;
 }
 
+.inLine {
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
 .inLine > p {
   display: inline;
+  margin: 0;
+  padding: 0;
 }
 
 /* content to print */
@@ -126,13 +134,21 @@ body {
   display: flex;
   margin: 0;
   padding: 0;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 
+.pNrDataMarginOne {
+  margin: 0 5px 0 0;
+}
+
+.pNrDataMarginTwo {
+  margin: 0 5px 0px 105px;
+}
+
 .nrAndData > p {
+  display: inline;
   font-size: 0.8em;
-  margin: 0 0 10px 0;
   padding: 0;
 }
 
@@ -230,7 +246,58 @@ td {
   border: 0.1px solid rgb(47, 47, 47);
   border-width: 1px solid rgb(47, 47, 47);
 }
+
+/* X rosu */
+#nrProiect {
+  color: red;
+}
+#titluProiect {
+  color: red;
+}
+#titluProces {
+  color: red;
+}
+#beneficiar {
+  color: red;
+}
+#dataProiect {
+  color: red;
+}
+#obiect {
+  color: red;
+}
+#categorieLucrari {
+  color: red;
+}
+#ocazie {
+  color: red;
+}
+#nrPlanse {
+  color: red;
+}
+#elementul {
+  color: red;
+}
+#mentiuni {
+  color: red;
+}
+
 /* dreapta */
+.inputs {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
+
+input {
+  margin: 0 0 10px 0;
+}
+
+.mentiunile {
+  height: 100px;
+  margin: 0 0 10px 0;
+}
+
 #printPdf {
   width: 100px;
   height: 50px;
