@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print Div to PDF</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <header>
+      <div class="name">
+        <p>Voicu</p>
+      </div>
+    </header>
+    <main>
+      <div class="twoGrid">
+        <div class="printContainer">
+          <div id="contentToPrint">
+            <h2 id="numePagina">Example Content</h2>
+            <p>This content will be exported to an A4-sized PDF.</p>
+            <p>
+              Feel free to add more text, images, or other elements inside this
+              div!
+            </p>
+          </div>
+        </div>
+        <div class="buttons">
+          <input type="text" id="nume" />
+          <button id="printPdf">Print to PDF</button>
+          <button id="save">save</button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="print.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>

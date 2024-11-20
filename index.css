@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  margin: 0;
+  padding: 0;
+}
+
+.twoGrid {
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: 43% 57%;
+}
+
+.printContainer {
+  border-right: 5px solid rebeccapurple;
+  border-left: 10px solid rebeccapurple;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  border-left: 5px solid rebeccapurple;
+  border-right: 10px solid rebeccapurple;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+}
+
+#contentToPrint {
+  width: 496px;
+  height: 716px;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: #fff;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin: 7px 0 0 7px;
+}
+
+#printPdf {
+  width: 100px;
+  height: 50px;
+}
+
+.name {
+  width: 100%;
+  background-color: rebeccapurple;
+  margin: 0;
+  padding: 0;
+}
+
+.name p {
+  margin: 0;
+  padding: 0px 20px;
+  color: aliceblue;
+  font-size: 50px;
+  letter-spacing: 2px;
+}
+
+.nume {
+  width: 100px;
+  height: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+footer {
+  width: 100%;
+  height: 20px;
+  background-color: rebeccapurple;
+}
