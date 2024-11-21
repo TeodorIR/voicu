@@ -1,4 +1,6 @@
 body {
+  width: 100%;
+  height: 100dvh;
   margin: 0;
   padding: 0;
   background-color: rebeccapurple;
@@ -51,7 +53,7 @@ body {
 /* content to print */
 #contentToPrint {
   width: 36em;
-  height: 50.2em;
+  height: 52.2em;
   padding: 20px;
   border: 1px solid black;
   background-color: #fff;
