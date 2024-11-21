@@ -7,12 +7,12 @@ body {
 }
 
 .header {
-  width: 50%;
+  width: 100%;
   margin: 0;
   padding: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 .header p {
   color: aliceblue;
@@ -25,12 +25,21 @@ body {
   grid-template-columns: 1fr 1fr;
 }
 
+.ndm {
+  color: aliceblue;
+  font-size: 1.5rem !important;
+  margin: 20px 0;
+  padding: 0;
+}
+
 /* stanga */
 .stanga {
   background-color: rebeccapurple;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  border: 1px solid black;
 }
 
 .stanga p {
@@ -291,7 +300,16 @@ td {
 }
 
 /* dreapta */
+.dreapta {
+  background-color: rebeccapurple;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid black;
+}
+
 #inputsForm {
+  margin: 10px 0 0 0;
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -299,16 +317,21 @@ td {
 
 input {
   margin: 0 0 10px 0;
+  border-radius: 5px;
 }
 
 .mentiunile {
   height: 100px;
   margin: 0 0 10px 0;
+  border-radius: 5px;
 }
 
 #printPdf {
   width: 100px;
   height: 50px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  font-size: large;
 }
 
 .dreapta {
@@ -325,4 +348,18 @@ input {
 
 .tableInput input {
   width: 30%;
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#save {
+  width: 100px;
+  height: 50px;
+  background-color: aliceblue;
+  border-radius: 10px;
+  font-size: large;
 }
