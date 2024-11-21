@@ -305,95 +305,6 @@ window.onload = () => {
   }
 };*/
 
-// Tabel dreapta
-const numeUnu = document.getElementById('numeUnu');
-const numeDoi = document.getElementById('numeDoi');
-const numeTrei = document.getElementById('numeTrei');
-const numePatru = document.getElementById('numePatru');
-const prenumeUnu = document.getElementById('prenumeUnu');
-const prenumeaDoi = document.getElementById('prenumeaDoi');
-const prenumeTrei = document.getElementById('prenumeTrei');
-const prenumePatru = document.getElementById('prenumePatru');
-const semnaturaUnu = document.getElementById('semnaturaUnu');
-const semnaturaDoi = document.getElementById('semnaturaDoi');
-const semnaturaTrei = document.getElementById('semnaturaTrei');
-const semnaturaPatru = document.getElementById('semnaturaPatru');
-
-// Tabel stanga
-const newNmUnu = document.getElementById('newNmUnu');
-const newNmDoi = document.getElementById('newNmDoi');
-const newNmTrei = document.getElementById('newNmTrei');
-const newNmPatru = document.getElementById('newNmPatru');
-const newPnUnu = document.getElementById('newPnUnu');
-const newPnDoi = document.getElementById('newPnDoi');
-const newPnTrei = document.getElementById('newPnTrei');
-const newPnPatru = document.getElementById('newPnPatru');
-const newSnUnu = document.getElementById('newSnUnu');
-const newSnDoi = document.getElementById('newSnDoi');
-const newSnTrei = document.getElementById('newSnTrei');
-const newSnPatru = document.getElementById('newSnPatru');
-
-function nmUnu() {
-  const nwNmUnu = numeUnu.value;
-  newNmUnu.innerHTML = nwNmUnu;
-  newNmUnu.style.color = 'black';
-}
-function nmDoi() {
-  const nwNmDoi = numeDoi.value;
-  newNmDoi.innerHTML = nwNmDoi;
-  newNmDoi.style.color = 'black';
-}
-function nmTrei() {
-  const nwNmTrei = numeTrei.value;
-  newNmTrei.innerHTML = nwNmTrei;
-  newNmTrei.style.color = 'black';
-}
-function nmPatru() {
-  const nwNmPatru = numePatru.value;
-  newNmPatru.innerHTML = nwNmPatru;
-  newNmPatru.style.color = 'black';
-}
-function pnUnu() {
-  const nwPnUnu = prenumeUnu.value;
-  newPnUnu.innerHTML = nwPnUnu;
-  newPnUnu.style.color = 'black';
-}
-function pnDoi() {
-  const nwPnDoi = prenumeDoi.value;
-  newPnDoi.innerHTML = nwPnDoi;
-  newPnDoi.style.color = 'black';
-}
-function pnTrei() {
-  const nwPnTrei = prenumeTrei.value;
-  newPnTrei.innerHTML = nwPnTrei;
-  newPnTrei.style.color = 'black';
-}
-function pnPatru() {
-  const nwPnPatru = prenumePatru.value;
-  newPnPatru.innerHTML = nwPnPatru;
-  newPnPatru.style.color = 'black';
-}
-function snUnu() {
-  const nwSnUnu = semnaturaUnu.value;
-  newSnUnu.innerHTML = nwSnUnu;
-  newSnUnu.style.color = 'black';
-}
-function snDoi() {
-  const nwSnDoi = semnaturaDoi.value;
-  newSnDoi.innerHTML = nwSnDoi;
-  newSnDoi.style.color = 'black';
-}
-function snTrei() {
-  const nwSnTrei = semnaturaTrei.value;
-  newSnTrei.innerHTML = nwSnTrei;
-  newSnTrei.style.color = 'black';
-}
-function snPatru() {
-  const nwSnPatru = semnaturaPatru.value;
-  newSnPatru.innerHTML = nwSnPatru;
-  newSnpatru.style.color = 'black';
-}
-
 /* function nwMentiuni() {
   const newMentiuni = mentiuniNou.value;
   mentiuni.innerHTML = newMentiuni;
@@ -428,16 +339,4 @@ save.addEventListener('click', () => {
   nwElement();
   nwMentiuni();
   titluNouInContract();
-  nmUnu();
-  nmDoi();
-  nmTrei();
-  nmPatru();
-  pnUnu();
-  pnDoi();
-  pnTrei();
-  pnPatru();
-  snUnu();
-  snDoi();
-  snTrei();
-  snPatru();
 });
