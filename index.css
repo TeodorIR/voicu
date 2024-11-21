@@ -291,7 +291,7 @@ td {
 }
 
 /* dreapta */
-.inputs {
+#inputsForm {
   display: flex;
   flex-direction: column;
   width: 80%;
