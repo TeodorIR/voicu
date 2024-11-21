@@ -161,11 +161,14 @@ function saveOptionsToLocalStorage() {
   );
   localStorage.setItem('titluNouOptions', JSON.stringify(options));
 }
+
 // Function to load options from local storage when the page loads
 function loadOptionsFromLocalStorage() {
   const savedOptions = JSON.parse(
     localStorage.getItem('titluNouOptions') || '[]'
   );
+
+  titluNou.innerHTML = ''; // Clear any existing options to avoid duplicates
 
   savedOptions.forEach((optionText) => {
     const option = document.createElement('option');
@@ -173,8 +176,10 @@ function loadOptionsFromLocalStorage() {
     titluNou.appendChild(option);
   });
 }
+
 // Call the function to load options on page load
-window.onload = loadOptionsFromLocalStorage;
+window.addEventListener('load', loadOptionsFromLocalStorage);
+
 //
 //
 //
@@ -208,6 +213,15 @@ function removeSelectedOption() {
 //
 //
 // ADD DIN LISTA DE PROD IN LOCAL STORAGE
+// Function to save all products in the select element to local storage
+function saveProductsToLocalStorage() {
+  const products = Array.from(listaProduse.options).map(
+    (option) => option.textContent
+  );
+  localStorage.setItem('listaProduseOptions', JSON.stringify(products));
+}
+
+// Function to add a new product to the list
 function addNewProduct() {
   const newProductText = produseNoiTextarea.value.trim();
   if (!newProductText) {
@@ -217,26 +231,28 @@ function addNewProduct() {
   const newOption = document.createElement('option');
   newOption.textContent = newProductText;
   listaProduse.appendChild(newOption);
-  // Save updated options to local storage
-  const updatedProducts = Array.from(listaProduse.options).map(
-    (option) => option.textContent
-  );
-  localStorage.setItem('listaProduseOptions', JSON.stringify(updatedProducts));
+  saveProductsToLocalStorage(); // Save the updated list
   produseNoiTextarea.value = ''; // Clear the input field
 }
-// Load options from local storage when the page loads
+
+// Function to load products from local storage when the page loads
 function loadProductsFromLocalStorage() {
   const savedProducts = JSON.parse(
     localStorage.getItem('listaProduseOptions') || '[]'
   );
+
+  listaProduse.innerHTML = ''; // Clear any existing options to avoid duplicates
+
   savedProducts.forEach((productText) => {
     const option = document.createElement('option');
     option.textContent = productText;
     listaProduse.appendChild(option);
   });
 }
+
 // Call the function to load products on page load
-window.onload = loadProductsFromLocalStorage;
+window.addEventListener('load', loadProductsFromLocalStorage);
+
 // Add an event listener to the button for adding new products
 //
 //
