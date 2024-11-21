@@ -151,16 +151,25 @@
                 <input type="date" id="data">
                 <select name="titlu" id="titluNou">
                   <option value="" selected disabled>Selectare Titlu</option>
-                  <option value="PROCES  VERBAL  DE TRASARE">PROCES  VERBAL  DE TRASARE</option>
-                  <option value="PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII
-                  LUCRĂRILOR CE DEVIN ASCUNSE">PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII
-                    LUCRĂRILOR CE DEVIN ASCUNSE</option>
-                    <option value="PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII">PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII</option>
                 </select>
+                <div class="addButtons">
+                  <button id="adaugareTitluLista">Adauga in lista</button>
+                  <button id="stergeDinLista">Sterge din lista</button>
+                  <!-- <button id="adaugareTitluContract">Adauga in contract</button> -->
+                </div>
+                <textarea name="" class="titluAreaNou" id="titluArea" placeholder="Adauga titlu nou..."></textarea>
                 <input type="text" name="" id="obiectNou" placeholder="Obiect">
                 <input type="text" name="" id="categorieNou" placeholder="Categorie lucrari">
                 <input type="text" name="" id="ocazieNou" placeholder="Ocazie verificare">
-                <textarea name="" class="produsNou" id="produseNoi" placeholder="Adauga produs..."></textarea>
+                <select name="" id="listaProduse">
+                  <option value="" selected disabled>Selectare produs</option>
+                </select>
+                <div class="addButtons">
+                  <button id="adaugare">Adauga in lista</button>
+                  <button id="adaugareContract">Adauga in contract</button>
+                  <button id="stergereProdus">Stergere Produs</button>
+                </div>
+                <textarea name="" class="produsNou" id="produseNoi" placeholder="Adauga produs nou..."></textarea>
                 <input type="text" name="" id="numarPlansaNou" placeholder="Numar Plansa">
                 <input type="text" name="" id="elementNou" placeholder="Element Reper">
                 <textarea name="" id="mentiuniNou" class="mentiunile" placeholder="Mentiuni speciale..."></textarea>

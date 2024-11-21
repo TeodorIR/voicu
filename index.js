@@ -12,6 +12,9 @@ const numeBeneficiar = document.getElementById('numeBeneficiar');
 // Titlul procesului
 const titluProces = document.getElementById('titluProces');
 const titluNou = document.getElementById('titluNou');
+const adaugareTitluLista = document.getElementById('adaugareTitluLista');
+const adaugareTitluContract = document.getElementById('adaugareTitluContract');
+const stergeDinLista = document.getElementById('stergeDinLista');
 // Data
 const dataProiect = document.getElementById('dataProiect');
 const data = document.getElementById('data');
@@ -27,6 +30,9 @@ const ocazieNou = document.getElementById('ocazieNou');
 // Produse noi //
 const produseDiv = document.querySelector('.produse');
 const produseNoiTextarea = document.getElementById('produseNoi');
+const listaProduse = document.getElementById('listaProduse');
+const adaugare = document.getElementById('adaugare');
+const adaugareContract = document.getElementById('adaugareContract');
 // Pentru stergerea produselor //
 const paragraph = document.querySelector('.produse > p');
 // Numar plasa
@@ -69,12 +75,22 @@ function nmBeneficiar() {
   beneficiar.style.color = 'black';
   beneficiar.style.fontWeight = 'bold';
 }
-// Functie pentru titlul procesului
-function nwTitle() {
-  const newTitle = titluNou.value;
-  titluProces.innerHTML = newTitle;
+// Functie pentru titlul procesului in lista
+function addNewTitle() {
+  const nwTitle = titluArea.value.trim();
+  const nwProTlt = document.createElement('option');
+  nwProTlt.textContent = nwTitle;
+  titluNou.appendChild(nwProTlt);
+  saveOptionsToLocalStorage();
+  titluArea.value = '';
+}
+// Functie pentru titlul procesului din lista in contract
+function titluNouInContract() {
+  const titluNouDinListaInContract = titluNou.value;
+  titluProces.innerHTML = titluNouDinListaInContract;
   titluProces.style.color = 'black';
 }
+
 // Functie pentru data
 function nwData() {
   const [year, month, day] = data.value.split('-');
@@ -93,26 +109,27 @@ function nwCategorie() {
   categorieLucrari.innerHTML = newCategorie;
   categorieLucrari.style.color = 'black';
 }
-// Functie pentru a adauga produse//
+// Functie pentru a adauga produse in lista de produse//
 function addNewProduct() {
-  const newProductText = produseNoiTextarea.value.trim(); // Get and trim textarea value
-
-  if (newProductText === '') {
-    alert('Please add some text before saving!'); // Alert if textarea is empty
-    return;
-  }
-
-  const newP = document.createElement('p'); // Create a new <p> element
-  newP.textContent = newProductText; // Set its content
-  produseDiv.appendChild(newP); // Append to the container div
-
+  const newProductText = produseNoiTextarea.value.trim();
+  const newP = document.createElement('option');
+  newP.textContent = newProductText;
+  listaProduse.appendChild(newP);
   produseNoiTextarea.value = ''; // Clear the textarea
-
+}
+// Functie pentru a adauga produs in contract
+function prdNouContract() {
+  const newPrdContract = listaProduse.value.trim();
+  const newParDiv = document.createElement('p');
+  newParDiv.textContent = newPrdContract;
+  produseDiv.appendChild(newParDiv);
   // Functie pentru stergerea produselor//
-  newP.addEventListener('click', () => {
-    produseDiv.removeChild(newP);
+  newParDiv.addEventListener('click', () => {
+    produseDiv.removeChild(newParDiv);
   });
 }
+// Functie pentru salvarea optiunilor in memoria locala
+
 // Functie pentru ocazie
 function nwOcazie() {
   const newOcazie = ocazieNou.value;
@@ -137,9 +154,146 @@ function nwMentiuni() {
   mentiuni.innerHTML = newMentiuni;
   mentiuni.style.color = 'black';
 }
+// Function to save all options in the select element to local storage
+function saveOptionsToLocalStorage() {
+  const options = Array.from(titluNou.options).map(
+    (option) => option.textContent
+  );
+  localStorage.setItem('titluNouOptions', JSON.stringify(options));
+}
+// Function to load options from local storage when the page loads
+function loadOptionsFromLocalStorage() {
+  const savedOptions = JSON.parse(
+    localStorage.getItem('titluNouOptions') || '[]'
+  );
 
+  savedOptions.forEach((optionText) => {
+    const option = document.createElement('option');
+    option.textContent = optionText;
+    titluNou.appendChild(option);
+  });
+}
+// Call the function to load options on page load
+window.onload = loadOptionsFromLocalStorage;
+//
+//
+//
+//
+//
+//
+// Function to remove the selected option from the select element and local storage
+function removeSelectedOption() {
+  const selectedOption = titluNou.value; // Get the value of the selected option
+  //if (!selectedOption) {
+  //alert('Please select an option to delete!');
+  //return;
+  //}
+  // Remove the selected option from the select element
+  const options = Array.from(titluNou.options).filter(
+    (option) => option.value !== selectedOption
+  );
+  titluNou.innerHTML = ''; // Clear all options
+  options.forEach((option) => titluNou.appendChild(option)); // Re-add remaining options
+  // Update local storage
+  const updatedOptions = options.map((option) => option.textContent);
+  localStorage.setItem('titluNouOptions', JSON.stringify(updatedOptions));
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// ADD DIN LISTA DE PROD IN LOCAL STORAGE
+function addNewProduct() {
+  const newProductText = produseNoiTextarea.value.trim();
+  if (!newProductText) {
+    alert('Please enter a product!');
+    return;
+  }
+  const newOption = document.createElement('option');
+  newOption.textContent = newProductText;
+  listaProduse.appendChild(newOption);
+  // Save updated options to local storage
+  const updatedProducts = Array.from(listaProduse.options).map(
+    (option) => option.textContent
+  );
+  localStorage.setItem('listaProduseOptions', JSON.stringify(updatedProducts));
+  produseNoiTextarea.value = ''; // Clear the input field
+}
+// Load options from local storage when the page loads
+function loadProductsFromLocalStorage() {
+  const savedProducts = JSON.parse(
+    localStorage.getItem('listaProduseOptions') || '[]'
+  );
+  savedProducts.forEach((productText) => {
+    const option = document.createElement('option');
+    option.textContent = productText;
+    listaProduse.appendChild(option);
+  });
+}
+// Call the function to load products on page load
+window.onload = loadProductsFromLocalStorage;
+// Add an event listener to the button for adding new products
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Function to remove the selected option from the listaProduse element and update local storage
+function removeSelectedProduct() {
+  const selectedProduct = listaProduse.value; // Get the value of the selected option
+  /*if (!selectedProduct) {
+    alert('Please select a product to delete!');
+    return;
+  }*/
+  // Remove the selected option from the select element
+  const products = Array.from(listaProduse.options).filter(
+    (option) => option.value !== selectedProduct
+  );
+  listaProduse.innerHTML = ''; // Clear all options
+  products.forEach((option) => listaProduse.appendChild(option)); // Re-add remaining options
+  // Update local storage
+  const updatedProducts = products.map((option) => option.textContent);
+  localStorage.setItem('listaProduseOptions', JSON.stringify(updatedProducts));
+}
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// Functie pentru a pastra local optiunile
+/*titluNou.addEventListener('change', () => {
+  localStorage.setItem('titluNouOptions', titluNou.innerHTML);
+});
+window.onload = () => {
+  const savedOptions = localStorage.getItem('titluNouOptions');
+  if (savedOptions) {
+    titluNou.innerHTML = savedOptions;
+  }
+};*/
+const stergereProdus = document.getElementById('stergereProdus');
+stergereProdus.addEventListener('click', removeSelectedProduct);
+stergeDinLista.addEventListener('click', removeSelectedOption);
+adaugareTitluLista.addEventListener('click', addNewTitle);
+adaugare.addEventListener('click', addNewProduct);
+adaugareContract.addEventListener('click', prdNouContract);
 save.addEventListener('click', () => {
-  const inputs = document.querySelectorAll('#inputsForm input');
+  /*const inputs = document.querySelectorAll('#inputsForm input');
 
   // Check if all fields are filled
   for (let input of inputs) {
@@ -148,18 +302,17 @@ save.addEventListener('click', () => {
       alert('Please fill in all fields.');
       return; // Stop the function
     }
-  }
+  }*/
 
   nrProiecte();
   tltProiect();
   nmBeneficiar();
   nwData();
-  nwTitle();
   nwObiect();
   nwCategorie();
   nwOcazie();
   nwPlanse();
   nwElement();
   nwMentiuni();
-  addNewProduct();
+  titluNouInContract();
 });
