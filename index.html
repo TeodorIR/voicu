@@ -71,37 +71,6 @@
               </div>
             </div>
             <div class="produse">
-              <p>
-                - FL3' - Corp de iluminat echipat cu sursa LED, max 36W, min
-                5200lm, 4000K, CRI min. 90, difuzor microprismatic, durata de
-                viata min. 60000 h (L70/B50), cos fi>0.9, montaj incastrat in
-                tavan rigips, grad de protectie IP20, dimensiuni de referinta
-                600x600x76mm, alimentat din tablou consumatori normali
-              </p>
-              <p>
-                - FL11 - Luminobloc pentru marcarea cailor de evacuare in caz de
-                urgenta, montat aparent pe planseu, cu pictograma pentru
-                indicarea cailor de evacuare (formata din simbol
-                om+sageatatusa), sursa LED max 3W, min. 200cd/mp, echipat cu
-                acumulatori cu autonomie 3h, 1P65, 1K02
-              </p>
-              <p>
-                - FL20 - Corp de iluminat echipat cu sursa LED, max 45W, min
-                4000lm, 4000K, cos fi>0.9, montaj aparent, IP65, alimentat din
-                tablou consumatori normali.
-              </p>
-              <p>
-                - FL21 - Corp de iluminat echipat cu sursa LED, max 45 W, min
-                4000lm, 4000K, cos fi>0.9, montaj aparent, IP65, echipat cu kit
-                de emergenta cu autonomie min 3h, alimentat din tablou
-                consumatori vitali.
-              </p>
-              <p>
-                - CF3 - Corp de iluminat echipat cu sursa LED, max 22W, min
-                2000lm, 4000K, cos fi>0.9, montaj incastrat, dim. de referinta
-                D220xH60mm, grad de protectie IP20, echipat cu kit de emergenta
-                autonomie 3h, alimentat din tablou consumatori vitali.
-              </p>
             </div>
             <div class="documente">
               <p>- Au stat la baza verificãrilor, următoarele documente :</p>
@@ -180,10 +149,18 @@
                 <input type="text" name="" id="titluDeProiect" placeholder="Titlu Proiect">
                 <input type="text" name="" id="numeBeneficiar" placeholder="Nume beneficiar">
                 <input type="date" id="data">
-                <input type="text" id="titluNou" placeholder="Titlu Proces"/>
+                <select name="titlu" id="titluNou">
+                  <option value="" selected disabled>Selectare Titlu</option>
+                  <option value="PROCES  VERBAL  DE TRASARE">PROCES  VERBAL  DE TRASARE</option>
+                  <option value="PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII
+                  LUCRĂRILOR CE DEVIN ASCUNSE">PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII
+                    LUCRĂRILOR CE DEVIN ASCUNSE</option>
+                    <option value="PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII">PROCES  VERBAL  PENTRU VERIFICAREA CALITĂŢII</option>
+                </select>
                 <input type="text" name="" id="obiectNou" placeholder="Obiect">
                 <input type="text" name="" id="categorieNou" placeholder="Categorie lucrari">
                 <input type="text" name="" id="ocazieNou" placeholder="Ocazie verificare">
+                <textarea name="" class="produsNou" id="produseNoi" placeholder="Adauga produs..."></textarea>
                 <input type="text" name="" id="numarPlansaNou" placeholder="Numar Plansa">
                 <input type="text" name="" id="elementNou" placeholder="Element Reper">
                 <textarea name="" id="mentiuniNou" class="mentiunile" placeholder="Mentiuni speciale..."></textarea>

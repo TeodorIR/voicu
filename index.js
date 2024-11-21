@@ -24,6 +24,11 @@ const categorieNou = document.getElementById('categorieNou');
 // Ocazie verificare
 const ocazie = document.getElementById('ocazie');
 const ocazieNou = document.getElementById('ocazieNou');
+// Produse noi //
+const produseDiv = document.querySelector('.produse');
+const produseNoiTextarea = document.getElementById('produseNoi');
+// Pentru stergerea produselor //
+const paragraph = document.querySelector('.produse > p');
 // Numar plasa
 const nrPlanse = document.getElementById('nrPlanse');
 const numarPlansaNou = document.getElementById('numarPlansaNou');
@@ -88,6 +93,26 @@ function nwCategorie() {
   categorieLucrari.innerHTML = newCategorie;
   categorieLucrari.style.color = 'black';
 }
+// Functie pentru a adauga produse//
+function addNewProduct() {
+  const newProductText = produseNoiTextarea.value.trim(); // Get and trim textarea value
+
+  if (newProductText === '') {
+    alert('Please add some text before saving!'); // Alert if textarea is empty
+    return;
+  }
+
+  const newP = document.createElement('p'); // Create a new <p> element
+  newP.textContent = newProductText; // Set its content
+  produseDiv.appendChild(newP); // Append to the container div
+
+  produseNoiTextarea.value = ''; // Clear the textarea
+
+  // Functie pentru stergerea produselor//
+  newP.addEventListener('click', () => {
+    produseDiv.removeChild(newP);
+  });
+}
 // Functie pentru ocazie
 function nwOcazie() {
   const newOcazie = ocazieNou.value;
@@ -136,4 +161,5 @@ save.addEventListener('click', () => {
   nwPlanse();
   nwElement();
   nwMentiuni();
+  addNewProduct();
 });
