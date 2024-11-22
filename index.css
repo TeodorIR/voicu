@@ -347,7 +347,7 @@ td {
   margin: 10px 0 0 0;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
 }
 
 input {
@@ -385,7 +385,7 @@ option {
 }
 
 .addButtons button {
-  width: 150px;
+  width: 148.5px;
   height: 25px;
 }
 
