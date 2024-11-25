@@ -103,7 +103,6 @@ function nrProc() {
   const nwProc = numarProces.value;
   nrProcess.innerHTML = nwProc;
   nrProcess.style.color = 'black';
-  nrProcess.style.fontWeight = 'bold';
 }
 // Functie pentru obiect
 function nwObiect() {
