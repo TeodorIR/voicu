@@ -1,6 +1,5 @@
 // NR proiect
 const nrProiectOne = document.getElementById('nrProiectOne');
-const nrProiectTwo = document.getElementById('nrProiectTwo');
 const nrProiectThree = document.getElementById('nrProiectThree');
 const numarProiect = document.getElementById('numarProiect');
 // Titlu proiect
@@ -18,6 +17,9 @@ const stergeDinLista = document.getElementById('stergeDinLista');
 // Data
 const dataProiect = document.getElementById('dataProiect');
 const data = document.getElementById('data');
+// Numar proces
+const nrProcess = document.getElementById('nrProcess');
+const numarProces = document.getElementById('numarProces');
 // Obiect
 const obiect = document.getElementById('obiect');
 const obiectNou = document.getElementById('obiectNou');
@@ -52,13 +54,10 @@ const stergereProdus = document.getElementById('stergereProdus');
 // Functie pentru Nr proiecte
 function nrProiecte() {
   const nrOneNew = numarProiect.value;
-  const nrTwoNew = numarProiect.value;
   const nrThreeNew = numarProiect.value;
   nrProiectOne.innerHTML = nrOneNew;
   nrProiectOne.style.color = 'black';
   nrProiectOne.style.fontWeight = 'bold';
-  nrProiectTwo.innerHTML = nrTwoNew;
-  nrProiectTwo.style.color = 'black';
   nrProiectThree.innerHTML = nrThreeNew;
   nrProiectThree.style.color = 'black';
 }
@@ -98,6 +97,13 @@ function nwData() {
   const [year, month, day] = data.value.split('-');
   dataProiect.innerHTML = `${day}.${month}.${year}`;
   dataProiect.style.color = 'black';
+}
+// Functie pentru numar proces
+function nrProc() {
+  const nwProc = numarProces.value;
+  nrProcess.innerHTML = nwProc;
+  nrProcess.style.color = 'black';
+  nrProcess.style.fontWeight = 'bold';
 }
 // Functie pentru obiect
 function nwObiect() {
@@ -332,6 +338,7 @@ save.addEventListener('click', () => {
   tltProiect();
   nmBeneficiar();
   nwData();
+  nrProc();
   nwObiect();
   nwCategorie();
   nwOcazie();
