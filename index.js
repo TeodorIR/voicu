@@ -300,22 +300,7 @@ function removeSelectedProduct() {
 //
 //
 //
-// Functie pentru a pastra local optiunile
-/*titluNou.addEventListener('change', () => {
-  localStorage.setItem('titluNouOptions', titluNou.innerHTML);
-});
-window.onload = () => {
-  const savedOptions = localStorage.getItem('titluNouOptions');
-  if (savedOptions) {
-    titluNou.innerHTML = savedOptions;
-  }
-};*/
-
-/* function nwMentiuni() {
-  const newMentiuni = mentiuniNou.value;
-  mentiuni.innerHTML = newMentiuni;
-  mentiuni.style.color = 'black';
-}*/
+//
 
 stergereProdus.addEventListener('click', removeSelectedProduct);
 stergeDinLista.addEventListener('click', removeSelectedOption);
@@ -323,16 +308,17 @@ adaugareTitluLista.addEventListener('click', addNewTitle);
 adaugare.addEventListener('click', addNewProduct);
 adaugareContract.addEventListener('click', prdNouContract);
 save.addEventListener('click', () => {
-  /*const inputs = document.querySelectorAll('#inputsForm input');
+  //functie pentru asigurarea campurilor completate
+  const inputs = document.querySelectorAll('#inputsForm input');
 
   // Check if all fields are filled
   for (let input of inputs) {
     if (!input.value.trim()) {
       // Check if field is empty or whitespace
-      alert('Please fill in all fields.');
+      alert('Va rugam sa completati toate campurile!');
       return; // Stop the function
     }
-  }*/
+  }
 
   nrProiecte();
   tltProiect();
