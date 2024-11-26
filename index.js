@@ -46,6 +46,10 @@ const elementNou = document.getElementById('elementNou');
 // Mentiuni
 const mentiuni = document.getElementById('mentiuni');
 const mentiuniNou = document.getElementById('mentiuniNou');
+// Tabel buttons
+const checkboxOne = document.getElementById('checkboxOne');
+const checkboxTwo = document.getElementById('checkboxTwo');
+const optional = document.getElementById('optional');
 // Save button
 const save = document.getElementById('save');
 // Delete produs button
@@ -178,6 +182,25 @@ function nwMentiuni() {
   mentiuni.innerHTML = newMentiuni;
   mentiuni.style.color = 'black';
 }
+// Functie pentru randuri tabel
+checkboxTwo.addEventListener('change', function () {
+  if (checkboxTwo.checked) {
+    optional.style.display = 'table-row';
+    checkboxOne.checked = false;
+  } else {
+    optional.style.display = 'none';
+    checkboxOne.checked = true;
+  }
+});
+checkboxOne.addEventListener('change', function () {
+  if (checkboxOne.checked) {
+    checkboxTwo.checked = false;
+    optional.style.display = 'none';
+  } else {
+    checkboxTwo.checked = true;
+    optional.style.display = 'table-row';
+  }
+});
 // Function to save all options in the select element to local storage
 function saveOptionsToLocalStorage() {
   const options = Array.from(titluNou.options).map(

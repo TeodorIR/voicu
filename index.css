@@ -402,6 +402,49 @@ option {
   border-radius: 5px;
 }
 
+.butonTabel {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+.butonTabel > p {
+  margin-right: 5px;
+  color: aliceblue;
+  font-size: 1.5rem;
+}
+.butonTabel input {
+  margin: 0;
+}
+.check {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+.checkOne {
+  display: flex;
+}
+.checkOne p {
+  margin: 0;
+  padding: 0;
+  color: aliceblue;
+  margin-left: 5px;
+  font-size: large;
+}
+.checkTwo {
+  display: flex;
+}
+.checkTwo p {
+  margin: 0;
+  padding: 0;
+  color: aliceblue;
+  margin-left: 5px;
+  font-size: large;
+}
+#optional {
+  display: none;
+}
+
 #printPdf {
   width: 100px;
   height: 50px;
