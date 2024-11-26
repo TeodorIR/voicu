@@ -128,14 +128,31 @@ function addNewProduct() {
 function prdNouContract() {
   const newPrdContract = listaProduse.value.trim();
   const newParDiv = document.createElement('p');
+  newParDiv.setAttribute('contenteditable', 'true');
   newParDiv.textContent = newPrdContract;
   produseDiv.appendChild(newParDiv);
   // Functie pentru stergerea produselor//
-  newParDiv.addEventListener('click', () => {
+  /*newParDiv.addEventListener('click', () => {
     produseDiv.removeChild(newParDiv);
+  });*/
+
+  //Functie pt stergerea produselor doar pe x
+  produseDiv.addEventListener('click', (event) => {
+    // Check if the click was on the ::after pseudo-element
+    if (event.target === newParDiv) {
+      const rect = newParDiv.getBoundingClientRect();
+      if (
+        event.clientX > rect.right - 20 && // Customize the threshold based on ::after's size
+        event.clientY > rect.top &&
+        event.clientY < rect.bottom
+      ) {
+        // Remove the element
+        produseDiv.removeChild(newParDiv);
+      }
+    }
   });
 }
-// Functie pentru salvarea optiunilor in memoria locala
+//
 
 // Functie pentru ocazie
 function nwOcazie() {
@@ -231,10 +248,10 @@ function saveProductsToLocalStorage() {
 // Function to add a new product to the list
 function addNewProduct() {
   const newProductText = produseNoiTextarea.value.trim();
-  if (!newProductText) {
+  /*if (!newProductText) {
     alert('Please enter a product!');
     return;
-  }
+  }*/
   const newOption = document.createElement('option');
   newOption.textContent = newProductText;
   listaProduse.appendChild(newOption);
